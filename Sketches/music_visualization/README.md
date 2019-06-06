@@ -6,7 +6,7 @@ Create an Arduino-based music visualizer using the Fast Fourier Transform (FFT).
 
 ### Code
 
-The code for this project will use an FFT library to do a frequency analysis of an audio signal that is read in via one of the analog pins on the Arduino. Once the frequency spectrum is obtained, the code will allow the user to easily manipulate external hardware (e.g. LEDs) to respond to the various frequencies in the audio signal. There are multiple ways (???) for the frequency spectrum to be further processed:
+The code for this project will use an FFT library to do a frequency analysis of an audio signal that is read in via one of the analog pins on the Arduino. Once the frequency spectrum is obtained, the code will allow the user to easily manipulate external hardware (e.g. LEDs) to respond to the various frequencies in the audio signal. There are multiple analysis techniques that can be applied to the frequency spectrum:
 
 #### Binning
 
