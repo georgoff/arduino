@@ -10,7 +10,7 @@ The code for this project will use an FFT library to do a frequency analysis of 
 
 #### Binning
 
-In order for a continuous range of frequencies to be displayed visually with a discrete number of components, the frequencies must be broken up into **bins**, with each bin containing a range of frequencies. The strategy for dividing the frequencies will likely require research and trial-and-error to determine what frequencies are most common in modern music and what they represent.
+In order for a continuous range of frequencies to be displayed visually with a discrete number of components, the frequencies must be broken up into **bins**, with each bin containing a range of frequencies. The strategy for dividing the frequencies will likely require research and trial-and-error to determine which frequencies are most common in modern music and what they represent.
 
 #### Amplitude Adjustments
 
