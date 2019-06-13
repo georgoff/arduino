@@ -19,3 +19,9 @@ Depending on the physical visualization method, it may be important to determine
 ![visualizer_bars](http://blog.motionisland.com/wp-content/uploads/2018/04/after-effects-audio-spectrum-with-color-bar.gif)
 
 This effect requires the code to determine the amplitude within a bin and (potentially) scale the amplitude readings based on the input voltage, which will change based on the volume of the audio source.
+
+### Hardware
+
+#### Custom-Built Arduino Solution
+
+Originally, I planned on building my own circuit that would simply feed an audio signal into the analog input of an Arduino board and then analyze the signal from there using `analogRead()`; however, this technique severely limits the sampling rate that can be achieved because `analogRead()` [give justification here]
