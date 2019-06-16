@@ -43,3 +43,46 @@ By changing the prescaler used by the ADC in the Arduino, it's possible for us t
 | 32 | 38,462 |
 | 64 | 19,231 |
 | 128 | 9,615 |
+
+## TODO
+
+### Hardware
+
+#### Audio
+
+- Solder headers to audio board
+- Solder headers to teensy board
+- Wire audio board to teensy board
+- Wire neoPixels to teensy board
+
+#### neoPixels
+
+- Test neoPixels with cups on top
+- Buy more and wire them together
+- Power supply research
+
+#### Future Directions
+
+- Brainstorm cup-sensing techniques
+  - Ultrasonic?
+
+### Software
+
+#### Input
+
+- Use online audio library GUI to start (?)
+- Receive signal via audio board
+  - DC offset?
+  - Stereo/mono?
+
+#### Processing
+
+- Apply FFT
+- Extract frequency values and apply binning
+  - Need research on binning techniques and what frequencies are common in modern music
+
+#### Output
+
+- Write function for lighting neoPixels
+  - Likely will have multiple options/implementations here
+- Scale to more neoPixels
