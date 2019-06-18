@@ -24,7 +24,11 @@ This effect requires the code to determine the amplitude within a bin and (poten
 
 #### Custom-Built Arduino Solution
 
+<<<<<<< HEAD
 Originally, I planned on building my own circuit that would simply feed an audio signal into the analog input of an Arduino board and then analyze the signal from there using `analogRead()`; however, this technique severely limits the sampling rate that can be achieved because `analogRead()` is slow **[give justification here]**. This led to me diving into the dizzingly complicated world of [analog-to-digital converters](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADCs) and how they affect sampling rates.
+=======
+Originally, I planned on building my own circuit that would simply feed an audio signal into the analog input of an Arduino board and then analyze the signal from there using `analogRead()`; however, this technique severely limits the sampling rate that can be achieved because `analogRead()` is slow [give justification here]. This led to me diving into the dizzingly complicated world of [analog-to-digital converters](https://en.wikipedia.org/wiki/Analog-to-digital_converter) (ADCs) and how they affect sampling rates.
+>>>>>>> 6b5552012265cfd9144ce7d262dee80826e0a104
 
 ##### ADCs and Arduino
 
@@ -80,9 +84,12 @@ By changing the prescaler used by the ADC in the Arduino, it's possible for us t
 - Apply FFT
 - Extract frequency values and apply binning
   - Need research on binning techniques and what frequencies are common in modern music
+<<<<<<< HEAD
   - Wider windows (higher number of samples) means less temporal resolution
     - If we want to pick up a quick beat, we need a small window so that it doesn't get lost amongst the other frequencies in a larger window
   - More info [here](http://sites.music.columbia.edu/cmc/MusicAndComputers/chapter3/03_05.php)
+=======
+>>>>>>> 6b5552012265cfd9144ce7d262dee80826e0a104
 
 #### Output
 
