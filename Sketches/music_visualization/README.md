@@ -78,6 +78,7 @@ By changing the prescaler used by the ADC in the Arduino, it's possible for us t
 #### Processing
 
 - Apply FFT
+- ["FFT in Practice" Slideshow](http://www.doc.gold.ac.uk/~mas01rf/is52020b2013-14/2013-14/slides13.pdf)
 - Extract frequency values and apply binning
   - Need research on binning techniques and what frequencies are common in modern music
   - Wider windows (higher number of samples) means less temporal resolution
