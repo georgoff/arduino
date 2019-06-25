@@ -31,6 +31,8 @@ volatile int num_samples_taken = 0;
 void setup() {
   Serial.begin(115200);
 
+  sampling_period_us = round(1000000*(1.0/SAMPLING_FREQUENCY));
+
   ADCSRA = 0;             // clear ADCSRA register
   ADCSRB = 0;             // clear ADCSRB register
   ADMUX |= (0 & 0x07);    // set A0 analog input pin
@@ -84,7 +86,13 @@ void loop() {
 //  Serial.println("------------------------------");
 
   for(int i = 0; i < SAMPLES; i++) {
+//    while(!(ADCSRA & 0x10));
+    microseconds = micros();
+    
     vReal[i] = audioVoltage;
+    vImag[i] = 0;
+
+    while(micros() < microseconds + sampling_period_us){};
 //    Serial.print("vReal[");
 //    Serial.print(i);
 //    Serial.print("] = ");
@@ -153,11 +161,14 @@ void loop() {
       binnedSignal[i] = bin_sum / bin_width;
 
       Serial.println(binnedSignal[i]);
+//      Serial.print(" ");
 //      Serial.println(ceil(binnedSignal[i] / 100));
     }
 
+//    Serial.println("---------------");
+
         for(int i = 0; i < 8; i++) {
-      lightColumn(i, ceil(binnedSignal[i] / 2));
+      lightColumn(i, ceil(binnedSignal[i] / 50));
     }
 
 
@@ -178,7 +189,7 @@ void loop() {
 
 
 
-    delay(1000);
+    delay(10);
 
     }
  
