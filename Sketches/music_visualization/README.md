@@ -84,6 +84,7 @@ By changing the prescaler used by the ADC in the Arduino, it's possible for us t
   - Wider windows (higher number of samples) means less temporal resolution
     - If we want to pick up a quick beat, we need a small window so that it doesn't get lost amongst the other frequencies in a larger window
   - More info [here](http://sites.music.columbia.edu/cmc/MusicAndComputers/chapter3/03_05.php)
+- [Check this out](https://blog.yavilevich.com/2016/08/arduino-sound-level-meter-and-spectrum-analyzer/)
 
 #### Output
 
