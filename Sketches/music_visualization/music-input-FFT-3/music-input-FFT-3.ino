@@ -5,7 +5,7 @@
 
  
 #define SAMPLES 64             //Must be a power of 2
-#define SAMPLING_FREQUENCY 9900 //Hz, must be less than 10000 due to ADC
+#define SAMPLING_FREQUENCY 40000 //Hz, must be less than 10000 due to ADC
 const int n_bins = 8;
 const int bin_width = SAMPLES / 2 / n_bins;
 double bin_sum = 0;
@@ -30,6 +30,7 @@ volatile int num_samples_taken = 0;
  
 void setup() {
   Serial.begin(115200);
+//  analogReference(EXTERNAL);
 
   sampling_period_us = round(1000000*(1.0/SAMPLING_FREQUENCY));
 
@@ -43,7 +44,7 @@ void setup() {
   // for Arduino Uno ADC clock is 16 MHz and a conversion takes 13 clock cycles
   //ADCSRA |= (1 << ADPS2) | (1 << ADPS0);    // 32 prescaler for 38.5 KHz
   ADCSRA |= (1 << ADPS2);                     // 16 prescaler for 76.9 KHz
-  //ADCSRA |= (1 << ADPS1) | (1 << ADPS0);    // 8 prescaler for 153.8 KHz
+//  ADCSRA |= (1 << ADPS1) | (1 << ADPS0);    // 8 prescaler for 153.8 KHz
 
   ADCSRA |= (1 << ADATE); // enable auto trigger
   ADCSRA |= (1 << ADIE);  // enable interrupts when measurement complete
@@ -168,7 +169,7 @@ void loop() {
 //    Serial.println("---------------");
 
         for(int i = 0; i < 8; i++) {
-      lightColumn(i, ceil(binnedSignal[i] / 50));
+      lightColumn(i, ceil(binnedSignal[i] / 5));
     }
 
 
@@ -189,7 +190,7 @@ void loop() {
 
 
 
-    delay(10);
+//    delay(10);
 
     }
  
